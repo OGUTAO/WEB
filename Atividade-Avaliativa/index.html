@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site </title>
+  <link rel="stylesheet" href="parte.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Página Inicial</a></li>
+      <li><a href="#">Cadastro</a></li>
+      <li><a href="#">Lista de Itens</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Cadastrar de Item</h1>
+    <form id="cadastro-form">
+      <label for="nome">Nome do item:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="descricao">Descrição do Item:</label>
+      <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="lista-itens">
+      <h2>Itens Cadastrados</h2>
+      <ul id="itens-lista">
+        <!-- Itens serão adicionados dinamicamente aqui -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
