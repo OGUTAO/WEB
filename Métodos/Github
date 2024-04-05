@@ -1,0 +1,6 @@
+git init
+git add (.) ou (nome do arquivo que quiser)
+git commit -m "nome que quiser dar"
+git branch -M main // -> (se precisar colocar em main)
+git remote add origin (junto com o link do repositório)
+git push -u origin main

@@ -1,0 +1,10 @@
+Acessar arquivo fora da pasta:
+ls
+gcc (o nome do arquivo.c) -o "nome que quiser"
+./(o nome que colocou)
+
+Acessar arquivo dentro da pasta:
+cd "nome da pasta"
+ls
+gcc (o nome do arquivo.c) -o "nome que quiser"
+./(o nome que colocou)
