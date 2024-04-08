@@ -2,81 +2,71 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  nav {
+}
+
+nav {
     background-color: #333;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     display: inline;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     display: block;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-  }
-  
-  nav ul li a:hover {
+}
+
+nav ul li a:hover {
     background-color: #555;
-  }
-  
-  .container {
+}
+
+main {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
-  }
-  
-  form label,
-  form input,
-  form textarea,
-  form button {
+}
+
+#conteudo {
+    margin-top: 20px;
+}
+
+form label,
+form input,
+form textarea,
+form button {
     display: block;
     margin-bottom: 10px;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
+}
+
+form input,
+form textarea,
+form select {
+    width: calc(100% - 12px);
     padding: 8px;
-  }
-  
-  form button {
+}
+
+form button {
     background-color: #333;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  form button:hover {
+}
+
+form button:hover {
     background-color: #555;
-  }
-  
-  #lista-itens {
-    margin-top: 20px;
-  }
-  
-  #itens-lista {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #itens-lista li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-  }
-  
-  footer {
+}
+
+footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -87,9 +77,10 @@ body {
     padding: 10px 0;
 }
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     form input,
-    form textarea {
-      width: calc(100% - 16px);
+    form textarea,
+    form select {
+        width: calc(100% - 16px);
     }
-  }
+}

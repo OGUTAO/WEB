@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="parte4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Página Inicial</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="index.html">Lista de Itens</a></li>
+        </ul>
+        <div id="userInfo">
+            <span id="userEmail"></span>
+            <img src="userPhoto.jpg" alt="User Photo">
+        </div>
+    </nav>
+    <!-- Conteúdo da página inicial -->
+    <h1>Bem-vindo ao site de listagem de Itens</h1>
+    <main>
+            <section id="conteudo">
+                <h2>Login</h2>
+                <form id="loginForm" action="#" method="POST">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+    
+                    <button type="submit" id="loginBtn">Login</button>
+                </form>
+                <button onclick="voltarParaPagina()">Clique aqui para criar uma conta</button>
+            </section>
+        </main>
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita o envio do formulário padrão
+    
+                // Obter os valores do email e senha do formulário
+                var email = document.getElementById('email').value;
+                var senha = document.getElementById('senha').value;
+    
+                // Verificar se o email está registrado (exemplo: verificação fictícia)
+                var emailRegistrado = "email@exemplo.com"; // Simulando um email registrado no sistema
+    
+                if (email === emailRegistrado) {
+                    // Se o email estiver registrado, redireciona para a página inicial
+                    window.location.href = "inicio.html";
+                } else {
+                    // Se o email não estiver registrado, redireciona para a página de cadastro
+                    alert("Email não registrado. Por favor, faça o cadastro.");
+                    window.location.href = "cadastro.html";
+                }
+            });
+
+            function voltarParaPagina() {
+                window.location.href = "cadastro.html";
+            }
+        </script>
+    </body>
+    </html>
+    
+    <footer>
+        <p>&copy; 2024 Minha Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Recupera o e-mail do usuário do localStorage e exibe-o na página inicial
+        var userEmail = localStorage.getItem('userEmail');
+        if (userEmail) {
+            document.getElementById('userEmail').textContent = userEmail;
+        }
+    </script>
+</body>
+</html>

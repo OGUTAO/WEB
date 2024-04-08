@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="parte4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Página Inicial</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="index.html">Lista de Itens</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="conteudo">
+            <h2>Cadastro</h2>
+            <form id="cadastroForm" action="#" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade">
+
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa">
+
+                <button type="submit" id="cadastrarBtn">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Minha Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio do formulário padrão
+
+            // Obter os valores do formulário
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            var telefone = document.getElementById('telefone').value;
+            var idade = document.getElementById('idade').value;
+            var empresa = document.getElementById('empresa').value;
+
+            // Aqui você pode adicionar lógica para enviar os dados do formulário para o servidor
+            // Por exemplo, usando XMLHttpRequest ou fetch API para enviar uma solicitação POST ao servidor
+            // O código abaixo é apenas um exemplo fictício e precisa ser substituído pelo código real de comunicação com o servidor
+            var dadosCadastro = {
+                nome: nome,
+                email: email,
+                senha: senha,
+                telefone: telefone,
+                idade: idade,
+                empresa: empresa
+            };
+
+            // Enviar dados para o servidor (exemplo fictício)
+            // Substitua este código pelo código real de envio de dados para o servidor
+            console.log('Enviando dados do cadastro para o servidor:', dadosCadastro);
+            alert("Cadastro realizado com sucesso!");
+
+            // Redirecionar para a página inicial
+            window.location.href = "inicio.html";
+        });
+    </script>
+</body>
+</html>
