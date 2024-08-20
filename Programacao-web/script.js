@@ -1,13 +1,28 @@
-//let titulo = document.getElementById("titulo").value;
-//console.log(titulo);
-
 function submeter() {
     let nome = document.getElementById("nome").value;
     let cpf = document.getElementById("cpf").value;
     let idade = document.getElementById("idade").value;
    
-    //console.log(cpf);
     console.log(validaCPF(cpf));
+}
+function efetuarLogin(event){
+    console.preventDefault();
+    const inputEmail = document.querySelector('input[type= "email"]');
+    if (!inputEmail.value) {
+        const p = document.createElement('p');
+        p.innerText = 'Email é obrigatório';
+        inputEmail.parentElement.appendChild(erro);
+        inputEmail.focus();
+    }
+    const inputSenha = document.querySelector('input[type="password"]');
+    fetch('http://localhost/users/login', {
+        method: 'POST', 
+        body: {email: inputEmail,value, senha: inputSenha.value}
+    });
+    if (nome.trim() === '' || idade.trim() === ''|| idade.trim() === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
 }
 
 function validaCPF(cpf) {
@@ -30,30 +45,39 @@ function validaCPF(cpf) {
     return false;
 
    }
-
-   if(cpf.length != 11 && cpf.length != 14) {
-    alert("Formato inválido");
-    return false;
-
+   let soma = 0;
+   for (let i = 0; i < 9; i++) {
+       soma += parseInt(cpf.charAt(i)) * (10 - i);
    }
-
-   let soma = 0
-   for (let i = 0; i < 9; i++){
-    console.log(cpf.charAt(i-1));
-    soma = soma + (cpf.charAt(i-1) * (10 - (i-1)));
-   }
-   console.log(soma);
    let resto = soma % 11;
+   if (resto < 2) {
+       if (parseInt(cpf.charAt(9)) !== 0) {
+           alert("CPF inválido!");
+           return false;
+       }
+   } else {
+       if (parseInt(cpf.charAt(9)) !== (11 - resto)) {
+           alert("CPF inválido!");
+           return false;
+       }
+   }
+   soma = 0;
+   for (let i = 0; i < 10; i++) {
+       soma += parseInt(cpf.charAt(i)) * (11 - i);
+   }
+   resto = soma % 11;
+   if (resto < 2) {
+       if (parseInt(cpf.charAt(10)) !== 0) {
+           alert("CPF inválido!");
+           return false;
+       }
+   } else {
+       if (parseInt(cpf.charAt(10)) !== (11 - resto)) {
+           alert("CPF inválido!");
+           return false;
+       }
+   }
 
-   
-
-   // Iterar 9 primeiros digitos, repositando a seguinte regra:
-   // digito1 = 10 + digito2 = 9 + digito3 = 8 + ... + digito9 + 2 = resultado
-   // Dividir resultado por 11
-   // Recuperar o RESTO da divisão por 11
-   // Calcular (11 - RESTO)
-   // O resultado de (11 - RESTO) deve ser o primeiro digito verificado do CPF (10º)
-   // Caso o RESTO seja 0 ou 1, o digito verificador deve ser ZERO
-
-    return true;
+   return true;
 }
+   

@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão de html e css</title>
+    <meta name="description" content="Formulário de entrada de dados com um design melhorado.">
+    <title>Formulário de Entrada</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="titulo">FORMULÁRIO</h1>
-    <div class="entradas-usuario">
-        <input id="nome" placeholder="Nome">
-        <input id="idade" placeholder="Idade">
-        <input id="cpf" placeholder="CPF">
-        <button onclick="submeter()">OK</button>
-    </div>
-    <p class="rodape">Criado por Gutao</p>
+    <header>
+        <h1 id="titulo">Formulário</h1>
+    </header>
+    <main>
+        <form id="formulario" class="formulario-usuario" onsubmit="submeter(event)">
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text" placeholder="Digite seu nome" required>
+            
+            <label for="idade">Idade:</label>
+            <input id="idade" type="number" placeholder="Digite sua idade" required>
+            
+            <label for="cpf">CPF:</label>
+            <input id="cpf" type="text" placeholder="Digite seu CPF" required>
+            
+            <button type="submit">OK</button>
+        </form>
+    </main>
+    <footer>
+        <p class="rodape">Direitos Autorais Vasco Da Gama ©</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
